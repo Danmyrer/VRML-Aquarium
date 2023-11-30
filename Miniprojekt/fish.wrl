@@ -1,0 +1,22 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Sashimi [ 
+    field SFColor color
+    field SFString name
+] "sashimi.wrl"
+
+PROTO Fish [
+    field SFColor color 1 1 1
+    field SFString name "le fisho"
+] {
+    Transform {
+        rotation 1 0 0 -1.578
+        children [
+            Sashimi { 
+                color IS color
+                name IS name 
+            }
+        ]
+
+    }
+}

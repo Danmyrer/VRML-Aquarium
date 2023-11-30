@@ -1,0 +1,201 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Fish [
+    field SFColor color
+] "fish.wrl"
+
+PROTO DeckenLicht [
+] {
+    SpotLight {
+        on TRUE 
+        intensity 1 
+        ambientIntensity 0  
+        color 0 0.4 8
+        location 0 0 0 
+        direction 0 -1 0 
+        attenuation 1 0 0 
+        radius 100 
+        cutOffAngle 0.78 
+        beamWidth 1.57 
+    }
+}
+
+PROTO RaumLicht [
+] {
+    PointLight {
+        on TRUE 
+        intensity 1 
+        ambientIntensity 0 
+        color 1 1 1 
+        location 0 0 0 
+        attenuation 1 0 0 
+        radius 1000 
+    }
+}
+
+PROTO SimpleBox [
+] {
+    Shape {
+        geometry Box { }
+        appearance Appearance {
+            material Material {
+                transparency 0.3
+                diffuseColor 1 1 1
+            }
+        }
+    }
+}
+
+Background {
+    backUrl "sky_back.png"
+    leftUrl "sky_left.png"
+    frontUrl "sky_front.png"
+    rightUrl "sky_right.png"
+    topUrl "sky_top.png"
+    bottomUrl "sky_bottom.png"
+}
+
+Transform { 
+    children[
+        Transform {
+            scale 165 80 80
+            children [
+                Shape {
+                    geometry Box { }
+                    appearance Appearance {
+                        material Material {
+                            transparency 0.3
+                            diffuseColor 0.8 0.9 1
+                        }
+                    }
+                }
+            ]
+        }
+        Transform {
+            translation 0 80 0
+            children [
+                Transform {
+                    translation 40 0 0
+                    children [
+                        SimpleBox { }
+                        DeckenLicht { }
+                    ]
+                }
+                Transform {
+                    translation -40 0 0
+                    children [
+                        SimpleBox { }
+                        DeckenLicht { }
+                    ]
+                }
+            ]
+        }
+        Transform {
+            translation 590 310 -330
+            children [
+                SimpleBox { }
+                RaumLicht { }
+            ]
+        }
+        Transform {
+            scale 165 10 80
+            translation 0 -80 0
+            children [
+                Shape {
+                    # geometry Box { }
+                    appearance Appearance {
+                        material Material {
+                            diffuseColor 1 1 1
+                        }
+                    }
+                }
+            ]
+        }
+
+        Shape {
+            appearance Appearance { 
+                material Material { diffuseColor 1 0 0 } 
+            }
+            geometry ElevationGrid {
+                xDimension 80
+                zDimension 165
+                xSpacing 0.1
+                zSpacing 0.1
+                height [ 
+                    .0 .2 .4 .2 .0
+                    .0 .2 .4 .2 .1
+                    .1 .4 .5 .2 .2
+                    .2 .3 .5 .3 .1
+                    .1 .2 .3 .1 .0
+                    .0 .1 .2 .1 .0
+                ]
+            }
+        }
+
+
+        Fish { 
+            color 1 1 0
+            name "Hans Detlef" 
+        }
+        Transform {
+            translation 10 17 4
+            rotation 1 0 2 0.45
+            children [
+                Fish { 
+                    color 1 0 1
+                    name "Johanna Beispiel"
+                }
+            ]
+        }
+        Transform {
+            translation 20 4 -6
+            rotation 2 0 1.5 0.67
+            children [
+                Fish {
+                    color 0 1 0
+                    name "Brigitte Brett"
+                }
+            ]
+        }
+        Transform {
+            translation -5 -4 -8
+            rotation 2 1 0.5 0.29
+            children [
+                Fish { 
+                    color 0.59 0.15 0.99
+                    name "Bill Clinton"
+                }
+            ]
+        }
+    ]
+}
+
+Viewpoint {
+    description "top-down"
+    position 0 400 0
+    orientation -1 0 0 1.57
+}
+
+Viewpoint {
+    description "inside"
+    position 47 15 25
+    orientation -0.12133869212358869 0.9899497084381665 0.07263949722379272 1.0877780737829412
+}
+
+Viewpoint {
+    description "weit weg"
+    position -474 230 447
+    orientation -0.3644616055324756 -0.9178475528975318 -0.15723742472039495 0.8787851116500909
+}
+
+Viewpoint {
+    description "nation geographic"
+    position -20 8.5 83
+    orientation -0.38043303627464786 -0.92369622764876 -0.04534295908177032 0.2566488914386227
+}
+
+Viewpoint {
+    description "mama ich will mit den fischen spielen"
+    position -175 -194 365
+    orientation 0.6974497784144762 -0.6988470765382058 0.15867126458058603 0.6294388808290474
+}

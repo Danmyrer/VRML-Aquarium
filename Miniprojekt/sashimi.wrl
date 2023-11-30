@@ -1,0 +1,38 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO FishTorso [ 
+    field SFColor color
+] "fishtorso.wrl"
+
+EXTERNPROTO FishPelvicFin [ 
+    field SFColor color
+] "fishpelvicfin.wrl"
+
+EXTERNPROTO FishTailFin [ 
+    field SFColor color
+] "fishtailfin.wrl"
+
+PROTO Sashimi [
+    field SFColor color 1 1 1
+    field SFString name "le fish"
+] {
+    Transform {
+        children[
+            FishTorso { color IS color }
+            FishPelvicFin { color IS color }
+            Transform {
+                center 0 0 -0.8
+                rotation 0 0 1 1.578
+                children [
+                    FishPelvicFin { color IS color }
+                ]
+            }
+            Viewpoint {
+                description IS name
+                position 0 0 0
+                orientation 0.5773502691896258 -0.5773502691896258 -0.5773502691896257 2.0943951023931953
+            }
+            FishTailFin { color IS color }
+        ]
+    }
+}
