@@ -1,0 +1,61 @@
+#VRML V2.0 utf8
+
+PROTO Wand [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+    field MFString textureUrl "../../res/Fabric062.png"
+    field SFVec2f textureScale 2.5 2.5
+] {
+    Transform {
+        translation IS position
+        scale IS scale
+        children [
+            Shape {
+                geometry Box { }
+                appearance Appearance {
+                    material Material { }
+                    texture ImageTexture {
+                        url IS textureUrl
+                    }
+                    textureTransform TextureTransform {
+                        scale IS textureScale
+                    }
+                }
+            }
+        ]
+    }
+}
+
+PROTO Raum [
+
+] {
+    Transform {
+        children [
+            Wand { # Boden
+                scale 10 0.1 5
+                position 0 -0.1 0
+                textureUrl "../../res/laminate_floor_02.jpg"
+                textureScale 1.69 1.69
+            }
+        ]
+    }
+}
+
+Transform {
+    translation 0 10 0
+    children [
+        SpotLight {
+            on TRUE 
+            intensity 1 
+            ambientIntensity 0  
+            color 0 0.4 8
+            location 0 0 0 
+            direction 0 -1 0 
+            attenuation 1 0 0
+            radius 20
+            cutOffAngle 0.78
+            beamWidth 0.1
+    }
+    ]
+}
+Raum { }
