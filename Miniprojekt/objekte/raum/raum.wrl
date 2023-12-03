@@ -11,7 +11,65 @@ PROTO Wand [
         scale IS scale
         children [
             Shape {
-                geometry Box { }
+                geometry Box { 
+                    size 1 1 1
+                }
+                appearance Appearance {
+                    material Material { }
+                    texture ImageTexture {
+                        url IS textureUrl
+                    }
+                    textureTransform TextureTransform {
+                        scale IS textureScale
+                    }
+                }
+            }
+        ]
+    }
+}
+
+PROTO Wand_Fenster [
+    field MFString textureUrl "../../res/Fabric062.png"
+    field SFVec2f textureScale 10 10
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        scale IS scale
+        translation IS position
+        children [
+            Shape {
+                geometry IndexedFaceSet {
+                    coord Coordinate { point [
+                        0 0 0 # 0
+                        0 3 0 # 1
+                        10 0 0 # 2
+                        10 3 0 # 3
+                        # Fenster 1
+                        1 0.5 0 # 4
+                        3 0.5 0 # 5
+                        1 2.5 0 # 6
+                        3 2.5 0 # 7
+                        # Fenster 2
+                        4 0.5 0 # 8
+                        6 0.5 0 # 9
+                        4 2.5 0 # 10
+                        6 2.5 0 # 11
+                        # Fenster 3
+                        7 0.5 0 # 12
+                        9 0.5 0 # 13
+                        7 2.5 0 # 14
+                        9 2.5 0 # 15
+                    ]}
+                    coordIndex [
+                        4 6 1 0 -1
+                        15 3 1 6 -1
+                        15 13 2 3 -1
+                        13 4 0 2 -1
+                        5 8 10 7 -1
+                        12 14 11 9 -1
+                    ]
+                }
                 appearance Appearance {
                     material Material { }
                     texture ImageTexture {
@@ -33,29 +91,43 @@ PROTO Raum [
         children [
             Wand { # Boden
                 scale 10 0.1 5
-                position 0 -0.1 0
+                position 5 -0.05 2.5
                 textureUrl "../../res/laminate_floor_02.jpg"
                 textureScale 1.69 1.69
             }
+            Wand { # Decke
+                scale 10 0.1 5
+                position 5 3.05 2.5
+            }
+            Wand { # Wand -> -x
+                scale 0.1 3 5
+                position -0.05 1.5 2.5
+            }
+            Wand { # Wand -> +x
+                scale 0.1 3 5
+                position 10.05 1.5 2.5
+            }
+            Wand { # Wand -> -z
+                scale 10 3 0.1
+                position 5 1.5 5.05
+            }
+            Wand_Fenster { }
         ]
     }
 }
 
 Transform {
-    translation 0 10 0
+    translation 5 2.99 2.5
     children [
-        SpotLight {
+        PointLight { 
             on TRUE 
             intensity 1 
-            ambientIntensity 0  
-            color 0 0.4 8
+            ambientIntensity 1 
+            color 1 1 1 
             location 0 0 0 
-            direction 0 -1 0 
-            attenuation 1 0 0
+            attenuation 0 0 0 
             radius 20
-            cutOffAngle 0.78
-            beamWidth 0.1
-    }
+        }
     ]
 }
 Raum { }
