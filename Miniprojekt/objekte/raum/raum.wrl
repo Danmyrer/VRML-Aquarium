@@ -260,6 +260,10 @@ PROTO Raum [
     }
 }
 
+
+# Zum Testen
+Raum { }
+
 Transform {
     translation 5 2.99 2.5
     children [
@@ -274,6 +278,3 @@ Transform {
         }
     ]
 }
-
-# Zum Testen
-Raum { }
