@@ -1,0 +1,37 @@
+#VRML V2.0 utf8
+
+PROTO Viewpoints [ ] {
+    Transform {
+        children [
+            Viewpoint {
+                description "top-down"
+                position 0 400 0
+                orientation -1 0 0 1.57
+            }
+
+            Viewpoint {
+                description "inside"
+                position 47 15 25
+                orientation -0.12133869212358869 0.9899497084381665 0.07263949722379272 1.0877780737829412
+            }
+
+            Viewpoint {
+                description "weit weg"
+                position -474 230 447
+                orientation -0.3644616055324756 -0.9178475528975318 -0.15723742472039495 0.8787851116500909
+            }
+
+            Viewpoint {
+                description "national geographic"
+                position -20 8.5 83
+                orientation -0.38043303627464786 -0.92369622764876 -0.04534295908177032 0.2566488914386227
+            }
+
+            Viewpoint {
+                description "mama ich will mit den fischen spielen"
+                position -175 -194 365
+                orientation 0.6974497784144762 -0.6988470765382058 0.15867126458058603 0.6294388808290474
+            }
+        ]
+    }
+}
