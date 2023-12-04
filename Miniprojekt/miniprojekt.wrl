@@ -12,7 +12,7 @@ EXTERNPROTO Aquarium [
 EXTERNPROTO Zimmer [
     field SFVec3f scale
     field SFVec3f position
-] "objekte/zimmer/zimmer.wrl#Zimmer"
+] "objekte/zimmer.wrl#Zimmer"
 
 PROTO DeckenLicht [
 ] {

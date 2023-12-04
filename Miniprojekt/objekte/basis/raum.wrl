@@ -262,7 +262,7 @@ PROTO Raum [
 
 
 # Zum Testen
-Raum { }
+# Raum { }
 
 Transform {
     translation 5 2.99 2.5

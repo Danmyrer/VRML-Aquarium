@@ -20,30 +20,3 @@ PROTO World [
         on TRUE
     }
 }
-
-# Zum Testen
-World { }
-
-EXTERNPROTO Raum [
-] "zimmer/raum.wrl#Raum"
-
-Transform {
-    rotation 0 1 0 -0.7
-    children [
-        Raum { }
-        Transform {
-            translation 5 2.99 2.5
-            children [
-                PointLight { 
-                    on TRUE 
-                    intensity 0.8
-                    ambientIntensity 0.2 
-                    color 1 0.88 0.66
-                    location 0 0 0
-                    attenuation 1 0 0 
-                    radius 20
-                }
-            ]
-        }
-    ]
-}
