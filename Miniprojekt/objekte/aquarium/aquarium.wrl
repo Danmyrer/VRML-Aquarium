@@ -8,6 +8,7 @@ PROTO DeckenLicht [
 ] {
     SpotLight {
         on TRUE 
+        global TRUE
         intensity 1
         ambientIntensity 0.2 
         color 0.8 0.9 1

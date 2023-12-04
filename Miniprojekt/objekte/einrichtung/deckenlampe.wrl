@@ -1,0 +1,53 @@
+#VRML V2.0 utf8
+
+PROTO Deckenlampe [
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        translation IS position
+        children [
+            Transform {
+                translation 0 0.4 0
+                children [
+                    Shape {
+                        geometry Cylinder {
+                            height 0.4
+                            radius 0.01
+                        }
+                        appearance Appearance {
+                            material Material { }
+                            texture ImageTexture {
+                                url "../../res/Plastic013A.jpg"
+                            }
+                            textureTransform TextureTransform {
+                                scale 2.5 2.5
+                            }
+                        }
+                    }
+                ]
+            }
+            Shape {
+                geometry Sphere { radius 0.2 }
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0.5 0.5 0.5
+                        specularColor 1 1 1
+                        transparency 0.3
+                    }
+                }
+            }
+            PointLight {
+                ambientIntensity 0.5
+                color 1 0.8 0.6
+                global TRUE
+                intensity 0.8
+                attenuation 1 0.1 0.05
+                radius 20
+                on TRUE
+            }
+        ]
+    }
+}
+
+# Zum Debuggen
+Deckenlampe { }

@@ -8,6 +8,10 @@ EXTERNPROTO Tisch [
     field SFVec3f position
 ] "einrichtung/tisch.wrl#Tisch"
 
+EXTERNPROTO Deckenlampe [
+    field SFVec3f position
+] "einrichtung/deckenlampe.wrl#Deckenlampe"
+
 PROTO Zimmer [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
@@ -20,6 +24,12 @@ PROTO Zimmer [
             Tisch {
                 position 9.225 0.625 3.75
             }
+            Deckenlampe {
+                position 5 2.4 2.5
+            }
         ]
     }
 }
+
+# Zum Testen
+Zimmer { }
