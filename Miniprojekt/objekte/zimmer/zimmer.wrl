@@ -1,0 +1,17 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Raum [
+] "raum.wrl#Raum"
+
+PROTO Zimmer [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        translation IS position
+        scale IS scale
+        children [
+            Raum { }
+        ]
+    }
+}

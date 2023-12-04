@@ -1,0 +1,120 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Fish [
+    field SFColor color
+] "fisch/fish.wrl"
+
+PROTO DeckenLicht [
+] {
+    SpotLight {
+        on TRUE 
+        intensity 1 
+        ambientIntensity 0  
+        color 0 0.4 8
+        location 0 0 0 
+        direction 0 -1 0 
+        attenuation 1 0 0 
+        radius 100 
+        cutOffAngle 0.78 
+        beamWidth 1.57 
+    }
+}
+
+PROTO DebugBox [ ] {
+    Shape {
+        appearance Appearance {
+            material Material {
+                diffuseColor 1 1 1
+            }
+        }
+        geometry Box { size 1 1 1 }
+    }
+}
+
+PROTO Aquarium [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        scale IS scale
+        translation IS position
+        children [
+            Transform {
+                scale 0.0125 0.0125 0.0125
+                children [
+                    Transform {
+                        scale 165 80 80
+                        children [
+                            Shape {
+                                geometry Box { size 1 1 1 }
+                                appearance Appearance {
+                                    material Material {
+                                        transparency 0.5
+                                        diffuseColor 0.8 0.9 1
+                                        specularColor 1.0 1.0 1.0
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                    Transform {
+                        translation 0 40 0
+                        children [
+                            Transform {
+                                translation 40 0 0
+                                children [
+                                    DebugBox { }
+                                    DeckenLicht { }
+                                ]
+                            }
+                            Transform {
+                                translation -40 0 0
+                                children [
+                                    DebugBox { }
+                                    DeckenLicht { }
+                                ]
+                            }
+                        ]
+                    }
+                    Fish { 
+                        color 1 1 0
+                        name "Hans Detlef" 
+                    }
+                    Transform {
+                        translation 10 17 4
+                        rotation 1 0 2 0.45
+                        children [
+                            Fish { 
+                                color 1 0 1
+                                name "Johanna Beispiel"
+                            }
+                        ]
+                    }
+                    Transform {
+                        translation 20 4 -6
+                        rotation 2 0 1.5 0.67
+                        children [
+                            Fish {
+                                color 0 1 0
+                                name "Brigitte Brett"
+                            }
+                        ]
+                    }
+                    Transform {
+                        translation -5 -4 -8
+                        rotation 2 1 0.5 0.29
+                        children [
+                            Fish { 
+                                color 0.59 0.15 0.99
+                                name "Bill Clinton"
+                            }
+                        ]
+                    }
+                ]
+            } 
+        ]
+    }
+}
+
+# Zum Testen
+Aquarium { }

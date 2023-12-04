@@ -25,7 +25,7 @@ PROTO World [
 World { }
 
 EXTERNPROTO Raum [
-] "raum/raum.wrl#Raum"
+] "zimmer/raum.wrl#Raum"
 
 Transform {
     rotation 0 1 0 -0.7

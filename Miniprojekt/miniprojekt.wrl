@@ -1,8 +1,16 @@
 #VRML V2.0 utf8
 
-EXTERNPROTO Fish [
-    field SFColor color
-] "objekte/aquarium/fisch/fish.wrl"
+EXTERNPROTO World [ ] "objekte/world.wrl"
+
+EXTERNPROTO Aquarium [
+    field SFVec3f scale
+    field SFVec3f position
+] "objekte/aquarium/aquarium.wrl#Aquarium"
+
+EXTERNPROTO Zimmer [
+    field SFVec3f scale
+    field SFVec3f position
+] "objekte/zimmer/zimmer.wrl#Zimmer"
 
 PROTO DeckenLicht [
 ] {
@@ -20,88 +28,14 @@ PROTO DeckenLicht [
     }
 }
 
-Transform { 
-    children[
-        Transform {
-            scale 165 80 80
-            children [
-                Shape {
-                    geometry Box { }
-                    appearance Appearance {
-                        material Material {
-                            transparency 0.3
-                            diffuseColor 0.8 0.9 1
-                        }
-                    }
-                }
-            ]
-        }
-        Transform {
-            translation 0 80 0
-            children [
-                Transform {
-                    translation 40 0 0
-                    children [
-                        DeckenLicht { }
-                    ]
-                }
-                Transform {
-                    translation -40 0 0
-                    children [
-                        DeckenLicht { }
-                    ]
-                }
-            ]
-        }
-        Transform {
-            scale 165 10 80
-            translation 0 -80 0
-            children [
-                Shape {
-                    # geometry Box { }
-                    appearance Appearance {
-                        material Material {
-                            diffuseColor 1 1 1
-                        }
-                    }
-                }
-            ]
-        }
+World { }
 
-        Fish { 
-            color 1 1 0
-            name "Hans Detlef" 
+Transform {
+    children [
+        Aquarium { 
+            position 5 1 4
         }
-        Transform {
-            translation 10 17 4
-            rotation 1 0 2 0.45
-            children [
-                Fish { 
-                    color 1 0 1
-                    name "Johanna Beispiel"
-                }
-            ]
-        }
-        Transform {
-            translation 20 4 -6
-            rotation 2 0 1.5 0.67
-            children [
-                Fish {
-                    color 0 1 0
-                    name "Brigitte Brett"
-                }
-            ]
-        }
-        Transform {
-            translation -5 -4 -8
-            rotation 2 1 0.5 0.29
-            children [
-                Fish { 
-                    color 0.59 0.15 0.99
-                    name "Bill Clinton"
-                }
-            ]
-        }
+        Zimmer { }
     ]
 }
 
