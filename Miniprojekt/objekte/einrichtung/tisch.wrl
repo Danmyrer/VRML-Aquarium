@@ -1,0 +1,105 @@
+#VRML V2.0 utf8
+
+PROTO Basis [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+    field MFString textureUrl "../../res/Metal038.jpg"
+    field SFVec2f textureScale 2.5 2.5
+] {
+    Transform {
+        translation IS position
+        scale IS scale
+        children [
+            Shape {
+                geometry Box { size 1 1 1 }
+                appearance Appearance {
+                    material Material { }
+                    texture ImageTexture {
+                        url IS textureUrl
+                    }
+                    textureTransform TextureTransform {
+                        scale IS textureScale
+                    }
+                }
+            }
+        ]
+    }
+}
+
+PROTO Tischbein_Ring [
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        translation IS position
+        children [
+            Basis {
+                scale 0.91 0.04 0.04
+                position 0 -0.6 -0.975
+            }
+            Basis {
+                scale 0.91 0.04 0.04
+                position 0 -0.6 0.975
+            }
+            Basis {
+                scale 0.04 0.04 1.91
+                position -0.475 -0.6 0
+            }
+            Basis {
+                scale 0.04 0.04 1.91
+                position 0.475 -0.6 0
+            }
+        ]
+    }
+}
+
+PROTO Tischbein [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        translation IS position
+        scale IS scale
+        children [
+            Tischbein_Ring { }
+            Tischbein_Ring {
+                position 0 0.525 0
+            }
+            Basis {
+                scale 0.04 0.575 0.04
+                position -0.475 -0.3375 -0.975
+            }
+            Basis {
+                scale 0.04 0.575 0.04
+                position 0.475 -0.3375 -0.975
+            }
+            Basis {
+                scale 0.04 0.575 0.04
+                position -0.475 -0.3375 0.975
+            }
+            Basis {
+                scale 0.04 0.575 0.04
+                position 0.475 -0.3375 0.975
+            }
+        ]
+    }
+}
+
+PROTO Tisch [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        translation IS position
+        scale IS scale
+        children [
+            Basis {
+                scale 1 0.1 2
+                textureUrl "../../res/Wood026.jpg"
+            }
+            Tischbein { }
+        ]
+    }
+}
+
+# Zum Debuggen
+Tisch { }

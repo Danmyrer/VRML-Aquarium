@@ -35,8 +35,9 @@ Viewpoints { }
 
 Transform {
     children [
-        Aquarium { 
-            position 5 1 4
+        Aquarium {
+            position 9.25 1.2 3.75
+            rotation 0 1 0 4.712388
         }
         Zimmer { }
     ]

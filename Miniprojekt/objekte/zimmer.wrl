@@ -3,6 +3,11 @@
 EXTERNPROTO Raum [
 ] "basis/raum.wrl#Raum"
 
+EXTERNPROTO Tisch [
+    field SFVec3f scale
+    field SFVec3f position
+] "einrichtung/tisch.wrl#Tisch"
+
 PROTO Zimmer [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
@@ -12,6 +17,9 @@ PROTO Zimmer [
         scale IS scale
         children [
             Raum { }
+            Tisch {
+                position 9.25 0.625 3.75
+            }
         ]
     }
 }
