@@ -14,7 +14,7 @@ PROTO Teppich [
                         url "../../res/Fabric051.jpg"
                     }
                     textureTransform TextureTransform {
-                        scale 3 3
+                        scale 6 3
                     }
                 }
             }
