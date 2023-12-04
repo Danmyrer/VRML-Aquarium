@@ -12,6 +12,10 @@ EXTERNPROTO Deckenlampe [
     field SFVec3f position
 ] "einrichtung/deckenlampe.wrl#Deckenlampe"
 
+EXTERNPROTO Teppich [
+    field SFVec3f position
+] "einrichtung/teppich.wrl#Teppich"
+
 PROTO Zimmer [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
@@ -26,6 +30,9 @@ PROTO Zimmer [
             }
             Deckenlampe {
                 position 5 2.4 2.5
+            }
+            Teppich {
+                position 3.45 0.01 2
             }
         ]
     }
