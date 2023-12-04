@@ -93,7 +93,7 @@ PROTO Tisch [
         scale IS scale
         children [
             Basis {
-                scale 1 0.1 2
+                scale 1.5 0.1 2.5
                 textureUrl "../../res/Wood026.jpg"
             }
             Tischbein { }

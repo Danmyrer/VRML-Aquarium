@@ -18,7 +18,7 @@ PROTO Zimmer [
         children [
             Raum { }
             Tisch {
-                position 9.25 0.625 3.75
+                position 9.225 0.625 3.75
             }
         ]
     }
