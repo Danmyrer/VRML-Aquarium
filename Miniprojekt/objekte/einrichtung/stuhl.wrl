@@ -3,7 +3,7 @@
 PROTO Basis_Rund [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
-    field MFString textureUrl "../../res/Metal038.jpg"
+    field MFString textureUrl "../../res/Leather034D.jpg"
     field SFVec2f textureScale 2.5 2.5
 ] {
     Transform {
@@ -76,6 +76,17 @@ PROTO Basis_Rund [
                         4 22 1 -1
                         13 23 6 -1
                     ]
+                }
+                appearance Appearance {
+                    material Material {
+                        specularColor 0.1 0.1 0.1
+                    }
+                    texture ImageTexture {
+                        url IS textureUrl
+                    }
+                    textureTransform TextureTransform {
+                        scale IS textureScale
+                    }
                 }
             }
         ]

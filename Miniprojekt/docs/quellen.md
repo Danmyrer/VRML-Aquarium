@@ -10,3 +10,4 @@
 |Metal038|https://ambientcg.com/view?id=Metal038|
 |Wood026|https://ambientcg.com/view?id=Wood026|
 |Fabric051|ambientCG.com/a/Fabric051|
+|Leather034D|https://ambientcg.com/view?id=Leather034D|
