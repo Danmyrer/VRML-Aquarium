@@ -10,14 +10,14 @@ PROTO DeckenLicht [
         on TRUE 
         global TRUE
         intensity 1
-        ambientIntensity 0.2 
+        ambientIntensity 0.2
         color 0.8 0.9 1
-        location 0 0 0 
-        direction 0 -1 0 
+        location 0 0 0
+        direction 0 -1 0
         attenuation 0.5 0.1 0.05
         radius 100
-        cutOffAngle 0.785 
-        beamWidth 1.57  
+        cutOffAngle 0.55
+        beamWidth 0.2
     }
 }
 

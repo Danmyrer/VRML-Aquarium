@@ -17,8 +17,10 @@ EXTERNPROTO Stuhl_Bein [
 PROTO Couch [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
+    field SFRotation rotation 0 0 0 0
 ] {
     Transform {
+        rotation IS rotation
         scale IS scale
         translation IS position
         children [

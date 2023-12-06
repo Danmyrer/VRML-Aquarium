@@ -65,8 +65,8 @@ PROTO Wand_Fenster [
                     coord Coordinate { point [
                         0 0 0 # 0
                         0 3 0 # 1
-                        10 0 0 # 2
-                        10 3 0 # 3
+                        9 0 0 # 2
+                        9 3 0 # 3
                         # Fenster 1
                         1.25 0.5 0 # 4
                         2.75 0.5 0 # 5
@@ -225,14 +225,14 @@ PROTO Raum [
     Transform {
         children [
             Wand { # Boden
-                scale 10 0.1 5
-                position 5 -0.05 2.5
+                scale 9 0.1 5
+                position 4.5 -0.05 2.5
                 textureUrl "../../res/laminate_floor_02.jpg"
                 textureScale 1.69 1.69
             }
             Wand { # Decke
-                scale 10 0.1 5
-                position 5 3.05 2.5
+                scale 9 0.1 5
+                position 4.5 3.05 2.5
             }
             Wand { # Wand -> -x
                 scale 0.1 3 5
@@ -240,11 +240,11 @@ PROTO Raum [
             }
             Wand { # Wand -> +x
                 scale 0.1 3 5
-                position 10.05 1.5 2.5
+                position 9.05 1.5 2.5
             }
             Wand { # Wand -> -z
-                scale 10 3 0.1
-                position 5 1.5 5.05
+                scale 9 3 0.1
+                position 4.5 1.5 5.05
             }
             Wand_Fenster { }
             Fenster {

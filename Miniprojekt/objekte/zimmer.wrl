@@ -16,6 +16,14 @@ EXTERNPROTO Teppich [
     field SFVec3f position
 ] "einrichtung/teppich.wrl#Teppich"
 
+EXTERNPROTO Stuhl [
+    field SFVec3f position
+] "einrichtung/stuhl.wrl#Stuhl"
+
+EXTERNPROTO Couch [
+    field SFVec3f position
+] "einrichtung/couch.wrl#Couch"
+
 PROTO Zimmer [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
@@ -26,13 +34,21 @@ PROTO Zimmer [
         children [
             Raum { }
             Tisch {
-                position 9.225 0.625 3.75
+                position 8.225 0.625 3.75
             }
             Deckenlampe {
                 position 5 2.4 2.5
             }
             Teppich {
                 position 3.45 0.01 2
+            }
+            Stuhl {
+                rotation 0 1 0 3.14159
+                position 1.5 0.4 4.95
+            }
+            Couch {
+                rotation 0 1 0 3.14159
+                position 3.75 0.4 4.95
             }
         ]
     }
