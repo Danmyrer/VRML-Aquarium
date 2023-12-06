@@ -2,6 +2,7 @@
 
 PROTO Deckenlampe [
     field SFVec3f position 0 0 0
+    exposedField SFBool aktiv TRUE
 ] {
     Transform {
         translation IS position
@@ -43,7 +44,7 @@ PROTO Deckenlampe [
                 intensity 0.8
                 attenuation 1 0.1 0.05
                 radius 20
-                on TRUE
+                on IS aktiv
             }
         ]
     }

@@ -10,6 +10,7 @@ EXTERNPROTO Tisch [
 
 EXTERNPROTO Deckenlampe [
     field SFVec3f position
+    exposedField SFBool aktiv
 ] "einrichtung/deckenlampe.wrl#Deckenlampe"
 
 EXTERNPROTO Teppich [
@@ -40,7 +41,7 @@ PROTO Zimmer [
             Tisch {
                 position 8.225 0.625 3.75
             }
-            Deckenlampe {
+            DEF Deckenlampe Deckenlampe {
                 position 5 2.4 2.5
             }
             Teppich {
@@ -58,8 +59,38 @@ PROTO Zimmer [
                 position 6 1.5 4.99
                 rotation 0 1 0 3.14159
             }
+            Transform {
+                translation 6 1.5 4.99
+                children [
+                    Shape {
+                        geometry Box { size 0.3 0.3 0.3 }
+                        appearance Appearance {
+                            material Material {
+                                diffuseColor 1 0 0
+                                transparency 1
+                            }
+                        }
+                    }
+                    DEF Sensor TouchSensor { }
+                ]
+            }
         ]
     }
+
+    DEF LichtZustand Script {
+    eventIn SFBool startZustand
+    eventOut SFBool detonationResult
+    directOutput TRUE
+    field SFBool aktiv TRUE
+    url "castlescript:
+    function startZustand(wert, timestamp)
+        detonationResult := if (wert, aktiv :=
+            if (aktiv, FALSE, TRUE),
+            if (aktiv, TRUE, FALSE))"
+    }
+
+    ROUTE Sensor.isActive TO LichtZustand.startZustand
+    ROUTE LichtZustand.detonationResult TO Deckenlampe.aktiv
 }
 
 # Zum Testen
