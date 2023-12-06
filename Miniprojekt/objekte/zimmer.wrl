@@ -24,6 +24,10 @@ EXTERNPROTO Couch [
     field SFVec3f position
 ] "einrichtung/couch.wrl#Couch"
 
+EXTERNPROTO Lichtschalter [
+    field SFVec3f position
+] "einrichtung/lichtschalter.wrl#Lichtschalter"
+
 PROTO Zimmer [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
@@ -49,6 +53,10 @@ PROTO Zimmer [
             Couch {
                 rotation 0 1 0 3.14159
                 position 3.75 0.4 4.95
+            }
+            Lichtschalter {
+                position 6 1.5 4.99
+                rotation 0 1 0 3.14159
             }
         ]
     }

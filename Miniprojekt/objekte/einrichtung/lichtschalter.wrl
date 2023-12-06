@@ -29,9 +29,11 @@ PROTO Basis [
 
 PROTO Lichtschalter [
     field SFVec3f position 0 0 0
+    field SFRotation rotation 0 0 0 0
 ] {
     Transform {
         translation IS position
+        rotation IS rotation
         children [
             Basis {
                 position 0 0 0.005
