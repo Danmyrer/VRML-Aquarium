@@ -8,9 +8,10 @@ EXTERNPROTO Boden [
 ] "boden.wrl#Boden"
 
 PROTO DeckenLicht [
+    exposedField SFBool aktiv TRUE
 ] {
     SpotLight {
-        on TRUE 
+        on IS aktiv
         global TRUE
         intensity 1
         ambientIntensity 0.2
@@ -39,6 +40,7 @@ PROTO Aquarium [
     field SFVec3f scale 1 1 1
     field SFVec3f position 0 0 0
     field SFRotation rotation 0 0 0 0
+    exposedField SFBool switchState TRUE
 ] {
     Transform {
         scale IS scale
@@ -73,14 +75,18 @@ PROTO Aquarium [
                                 translation 40 0 0
                                 children [
                                     DebugBox { }
-                                    DeckenLicht { }
+                                    DeckenLicht {
+                                        aktiv IS switchState
+                                    }
                                 ]
                             }
                             Transform {
                                 translation -40 0 0
                                 children [
                                     DebugBox { }
-                                    DeckenLicht { }
+                                    DeckenLicht {
+                                        aktiv IS switchState
+                                    }
                                 ]
                             }
                         ]

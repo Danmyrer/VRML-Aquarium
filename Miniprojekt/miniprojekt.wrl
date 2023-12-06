@@ -35,10 +35,42 @@ Viewpoints { }
 
 Transform {
     children [
-        Aquarium {
+        DEF Aquarium Aquarium {
             position 8.2125 1.125 3.75
             rotation 0 1 0 4.712388
         }
-        Zimmer { }
+        DEF Zimmer Zimmer { }
     ]
 }
+
+Transform {
+    translation 6 1.5 4.99
+    children [
+        Shape {
+            geometry Box { size 0.3 0.3 0.3 }
+            appearance Appearance {
+                material Material {
+                    diffuseColor 1 0 0
+                    transparency 1
+                }
+            }
+        }
+        DEF Sensor TouchSensor { }
+    ]
+}
+
+DEF LichtZustand Script {
+    eventIn SFBool startZustand
+    eventOut SFBool detonationResult
+    directOutput TRUE
+    field SFBool aktiv TRUE
+    url "castlescript:
+    function startZustand(wert, timestamp)
+        detonationResult := if (wert, aktiv :=
+            if (aktiv, FALSE, TRUE),
+            if (aktiv, TRUE, FALSE))"
+}
+
+ROUTE Sensor.isActive TO LichtZustand.startZustand
+ROUTE LichtZustand.detonationResult TO Zimmer.switchState
+ROUTE LichtZustand.detonationResult TO Aquarium.switchState
