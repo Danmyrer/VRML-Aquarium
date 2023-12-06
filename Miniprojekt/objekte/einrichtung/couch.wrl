@@ -1,0 +1,82 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Basis_Rund [
+    field SFVec3f scale
+    field SFVec3f position
+    field MFString textureUrl
+    field SFVec2f textureScale
+] "stuhl.wrl#Basis_Rund"
+
+EXTERNPROTO Stuhl_Bein [
+    field SFVec3f scale
+    field SFVec3f position
+    field MFString textureUrl
+    field SFVec2f textureScale
+] "stuhl.wrl#Stuhl_Bein"
+
+PROTO Couch [
+    field SFVec3f scale 1 1 1
+    field SFVec3f position 0 0 0
+] {
+    Transform {
+        scale IS scale
+        translation IS position
+        children [
+            Basis_Rund { # Kissen Oben 1
+                scale 0.8 0.1 0.8
+                position 0 -0.05 0.2
+            }
+            Basis_Rund { # Kissen Unten 1
+                scale 0.8 0.15 1
+                position 0 -0.2 0
+            }
+            Basis_Rund { # Kissen Oben 2
+                scale 0.8 0.1 0.8
+                position 0.8 -0.05 0.2
+            }
+            Basis_Rund { # Kissen Unten 2
+                scale 0.8 0.15 1
+                position 0.8 -0.2 0
+            }
+            Basis_Rund { # Lehne Links
+                scale 0.2 0.6 0.9
+                position -0.2 -0.2 0
+            }
+            Basis_Rund { # Lehne Rechts
+                scale 0.2 0.6 0.9
+                position 1.6 -0.2 0
+            }
+            Basis_Rund { # Kissen Hinten 1
+                scale 0.8 0.5 0.2
+                position 0 0 0
+            }
+            Basis_Rund { # Kissen Hinten 2
+                scale 0.8 0.5 0.2
+                position 0.8 0 0
+            }
+            Basis_Rund { # Decke Hinten
+                scale 2 0.6 0.01
+                position -0.2 -0.2 -0.01
+            }
+            Basis_Rund { # Decke Unten
+                scale 2 0.01 0.8
+                position -0.2 -0.21 0
+            }
+            Stuhl_Bein { # Links 1
+                position -0.1 -0.31 0.2
+            }
+            Stuhl_Bein { # Links 2
+                position -0.1 -0.31 0.7
+            }
+            Stuhl_Bein { # Rechts 1
+                position 1.7 -0.31 0.2
+            }
+            Stuhl_Bein { # Rechts 2
+                position 1.7 -0.31 0.7
+            }
+        ]
+    }
+}
+
+# Zum Testen
+Couch { }
