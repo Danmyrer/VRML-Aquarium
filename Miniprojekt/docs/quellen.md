@@ -12,3 +12,4 @@
 |Fabric051|ambientCG.com/a/Fabric051|
 |Leather034D|https://ambientcg.com/view?id=Leather034D|
 |Gravel025|https://ambientCG.com/a/Gravel025|
+|Moss002|https://ambientCG.com/a/Moss002|

@@ -7,6 +7,9 @@ EXTERNPROTO Fish [
 EXTERNPROTO Boden [
 ] "boden.wrl#Boden"
 
+EXTERNPROTO Pflanze [
+] "minecraft.wrl#Pflanze"
+
 PROTO DeckenLicht [
     exposedField SFBool aktiv TRUE
 ] {
@@ -67,6 +70,12 @@ PROTO Aquarium [
                     }
                     Boden {
                         position -82.5 -40 -40
+                    }
+                    Pflanze {
+                        position 12 -18 -1
+                    }
+                    Pflanze {
+                        position 4 -17 14
                     }
                     Transform {
                         translation 0 40 0
