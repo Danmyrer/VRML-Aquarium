@@ -91,22 +91,6 @@ PROTO Aquarium [
                             }
                         ]
                     }
-
-                    Transform {
-                        translation -50 0 10
-                        children [
-                            Shape {
-                                appearance Appearance {
-                                    material Material {
-                                        diffuseColor 1 0 0
-                                    }
-                                }
-                                geometry Sphere {
-                                        radius 3
-                                }
-                            }
-                        ]
-                    }                    
                     DEF FishNode Transform {
                         translation -50 0 10
                         rotation 0 1 0 0
@@ -116,7 +100,7 @@ PROTO Aquarium [
                                 children [
                                     Fish { 
                                         color 1 0 0
-                                        name "Hans Detlef" 
+                                        name "Johan Schwartz" 
                                     }
                             ]
                             }
@@ -149,7 +133,7 @@ PROTO Aquarium [
                         children [
                             Fish { 
                                 color 0.59 0.15 0.99
-                                name "Bill Clinton"
+                                name "Hans Detlef"
                             }
                         ]
                     }
