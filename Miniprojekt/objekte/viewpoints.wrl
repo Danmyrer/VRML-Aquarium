@@ -5,32 +5,32 @@ PROTO Viewpoints [ ] {
         children [
             Viewpoint {
                 description "top-down"
-                position 0 400 0
-                orientation -1 0 0 1.57
+                position 8.38 2.86 3.65
+                orientation -0.5387525506651999 0.647681540808045 0.5387525506651999 1.9921053630804983
             }
 
             Viewpoint {
                 description "inside"
-                position 47 15 25
-                orientation -0.12133869212358869 0.9899497084381665 0.07263949722379272 1.0877780737829412
+                position 0.33 1.32 4.41
+                orientation 0 -1 0 1.3499388585435301
             }
 
             Viewpoint {
-                description "weit weg"
-                position -474 230 447
-                orientation -0.3644616055324756 -0.9178475528975318 -0.15723742472039495 0.8787851116500909
+                description "stalker"
+                position 1.24 1.32 -0.39
+                orientation 0.0008207582220705806 -0.9999971302346624 0.0022507506259619838 2.4422453063869916
             }
 
             Viewpoint {
                 description "national geographic"
-                position -20 8.5 83
-                orientation -0.38043303627464786 -0.92369622764876 -0.04534295908177032 0.2566488914386227
+                position 8.1 1.21 2.79
+                orientation 0 -0.9999999999999999 0 3.03851104506709
             }
 
             Viewpoint {
                 description "mama ich will mit den fischen spielen"
-                position -175 -194 365
-                orientation 0.6974497784144762 -0.6988470765382058 0.15867126458058603 0.6294388808290474
+                position 5.47 0.34 2.43
+                orientation 0.08567190501834145 -0.9840269575173748 0.156048939661976 2.1211515767691593
             }
         ]
     }
