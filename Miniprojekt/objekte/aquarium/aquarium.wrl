@@ -98,6 +98,7 @@ PROTO Aquarium [
                             Transform {
                                 translation 0 0 -10
                                 children [
+                                    DEF Sensor TouchSensor { }
                                     Fish { 
                                         color 1 0 0
                                         name "Johan Schwarz" 
@@ -158,8 +159,7 @@ PROTO Aquarium [
 
     DEF timer TimeSensor {
         cycleInterval 30
-        startTime 0
-        loop TRUE
+        # loop TRUE
     }
 
     ROUTE timer.fraction_changed TO line.set_fraction
@@ -167,6 +167,7 @@ PROTO Aquarium [
     ROUTE line.value_changed TO FishNode.set_translation
     ROUTE circle.value_changed TO FishNode.set_rotation
 
+    ROUTE Sensor.touchTime TO timer.startTime
 }
     
 Aquarium { }

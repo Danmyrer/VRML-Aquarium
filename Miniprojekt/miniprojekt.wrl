@@ -73,4 +73,4 @@ DEF LichtZustand Script {
 
 ROUTE Sensor.isActive TO LichtZustand.startZustand
 ROUTE LichtZustand.detonationResult TO Zimmer.switchState
-ROUTE LichtZustand.detonationResult TO Aquarium.switchState
+ROUTE LichtZustand.detonationResult TO Aquarium.switchStateBill Clinton
