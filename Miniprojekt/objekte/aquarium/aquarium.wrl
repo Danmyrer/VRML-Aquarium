@@ -100,7 +100,7 @@ PROTO Aquarium [
                                 children [
                                     Fish { 
                                         color 1 0 0
-                                        name "Johan Schwartz" 
+                                        name "Johan Schwarz" 
                                     }
                             ]
                             }
