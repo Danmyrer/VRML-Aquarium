@@ -1,1 +1,1 @@
-# VRML-Aquarium
+> Übungsaufgabe der Hochschule
